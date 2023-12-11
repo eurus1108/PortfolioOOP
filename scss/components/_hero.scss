@@ -1,0 +1,73 @@
+@use "../abstract/" as *;
+
+.hero {
+  & &__container {
+    padding: 5.2rem;
+
+    @include breakpoint-down(small) {
+      padding: 2.4rem;
+    }
+
+    .img-container {
+      border-radius: 2rem;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+
+      @include breakpoint-down(small) {
+        border-radius: 0.8rem;
+      }
+    }
+
+    .content-container {
+      position: relative;
+
+      @include breakpoint-down(medium) {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
+
+    .text-content {
+      padding: 2.4rem 0;
+
+      @include breakpoint-up(large) {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        color: $color-text-light;
+        padding: 3.8rem;
+      }
+
+      h1 {
+        font-size: $font-size-800;
+        text-transform: uppercase;
+        @include letter-spacing(-2);
+        line-height: 1.2;
+        margin-bottom: 2.4rem;
+
+        span {
+          padding: 0 2rem;
+          background-color: rgba($color-accent-01, 0.8);
+        }
+
+        @include breakpoint-down(large) {
+          font-size: $font-size-700;
+        }
+      }
+
+      p {
+        margin-bottom: 4.6rem;
+        font-size: $font-size-300;
+        @include letter-spacing(10);
+
+        @include breakpoint-down(large) {
+          font-size: $font-size-200;
+        }
+      }
+    }
+  }
+}

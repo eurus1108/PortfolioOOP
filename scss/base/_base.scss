@@ -1,0 +1,41 @@
+@use "../abstract/" as *;
+
+body {
+  font-family: $font-family-default;
+  font-size: $font-size-200;
+  background: $color-bg-default;
+  color: $color-text-default;
+  line-height: 1.6;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-family-headings;
+  font-weight: $font-weight-xbold;
+}
+
+img {
+  display: block;
+}
+
+h2 {
+  margin-bottom: 3.2rem;
+  font-size: $font-size-500;
+  @include letter-spacing(5);
+
+  @include breakpoint-down(small) {
+    font-size: $font-size-400;
+  }
+}
+
+h3 {
+  font-weight: $font-weight-regular;
+  @include letter-spacing(10);
+}

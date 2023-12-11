@@ -1,0 +1,61 @@
+@use "../abstract/" as *;
+
+.reflection {
+  padding-bottom: 15rem;
+}
+
+.title-section {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 2.4rem;
+
+  h1 {
+    font-size: $font-size-800;
+    text-transform: uppercase;
+  }
+
+  .sub-heading {
+    font-size: $font-size-300;
+    font-weight: $font-weight-medium;
+    @include letter-spacing(5);
+    max-width: 90rem;
+
+    span {
+      display: block;
+    }
+  }
+
+  .text-paragraphs {
+    margin: 2.4rem auto;
+    max-width: 100rem;
+    text-align: justify;
+    text-indent: 6rem;
+    line-height: 2;
+
+    &:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  @include breakpoint-down(medium) {
+    h1 {
+      font-size: $font-size-700;
+    }
+
+    p {
+      font-size: $font-size-200;
+      max-width: 52rem;
+    }
+  }
+
+  @include breakpoint-down(xsmall) {
+    h1 {
+      font-size: $font-size-600;
+    }
+
+    p {
+      font-size: $font-size-100;
+    }
+  }
+}

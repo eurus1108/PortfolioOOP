@@ -1,0 +1,39 @@
+@use "../abstract/" as *;
+
+.collection {
+  & &__container {
+    padding: 5.2rem;
+
+    @include breakpoint-down(small) {
+      padding: {
+        left: 2.4rem;
+        right: 2.4rem;
+      }
+    }
+  }
+
+  & &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+
+    @include breakpoint-down(small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-down(xsmall) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  & &__item {
+    padding-bottom: 2.8rem;
+
+    .collection-link {
+      display: block;
+      margin-bottom: 1.8rem;
+      border: 1px solid $color-bg-dark;
+      width: 100%;
+    }
+  }
+}
